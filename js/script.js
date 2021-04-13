@@ -1,0 +1,3 @@
+
+    //Prism.highlightAll(); // This works!
+    
