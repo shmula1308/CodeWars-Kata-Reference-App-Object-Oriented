@@ -1,0 +1,155 @@
+/* COLOR PALETTE */
+:root {
+  --primary-color: #29344b;
+  --secondary-color: #675883;
+  --tertiary-color: #4b6381;
+  --shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  --br: 5px;
+}
+
+/* RESETS */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto Mono", monospace;
+  background-color: var(--primary-color);
+}
+
+input[type="text"] {
+  border: none;
+  border: 1px solid var(--primary-color);
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.8em 0.5em;
+  border-radius: var(--br);
+  background-color: ;
+}
+
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5em;
+  border-radius: var(--br);
+  resize: none;
+}
+
+label {
+  margin: 0.8em 0 0.3em 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* GENERAL STYLING */
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+.katas-side-menu {
+  display: flex;
+  flex-direction: column;
+}
+.side-menu-title {
+  font-family: "VT323", monospace;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin: 1em 0;
+}
+
+.main-title {
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin: 0.5em 0 0.5em 0;
+}
+
+.kata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  margin-bottom: 1px;
+  border: 1px dotted var(--primary-color);
+  cursor: pointer;
+}
+
+.kata:hover {
+  background-color: rgb(75, 99, 129);
+}
+
+.kata-title {
+  font-size: 1rem;
+}
+
+.delete {
+  transition: 0.3s ease;
+  font-size: 18px;
+}
+
+.delete:active {
+  transform: scale(0.9);
+}
+.delete:hover {
+  color: cyan;
+}
+
+/* BUTTONS */
+
+input[type="submit"] {
+  border: none;
+  display: inline-block;
+  width: 100%;
+  padding: 0.5em 0;
+  margin-top: 0.8em;
+  font-family: inherit;
+  border-radius: 3px;
+  outline: none;
+}
+
+input[type="submit"]:active {
+  transform: scale(0.995);
+}
+
+/* LAYOUT */
+
+.app-container {
+  display: grid;
+  grid-template-columns: 1.5fr 7fr;
+  border: 1px solid gray;
+}
+
+.katas-side-menu {
+  height: 100vh;
+  background-color: var(--secondary-color);
+}
+
+.form-container {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--tertiary-color);
+  border-radius: var(--br);
+  padding: 3em;
+}
+
+form {
+  width: 600px;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
