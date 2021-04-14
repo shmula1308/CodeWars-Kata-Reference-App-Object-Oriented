@@ -114,6 +114,7 @@ input[type="submit"] {
   font-family: inherit;
   border-radius: 3px;
   outline: none;
+  cursor: pointer;
 }
 
 input[type="submit"]:active {
@@ -152,4 +153,43 @@ form {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.solution {
+  margin: 0 1em 0 1em;
+  flex-basis: 45%;
+}
+.solutions-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3em;
+}
+
+.content-wrapper {
+  padding-top: 4em;
+  width: 1200px;
+  height: 80vh;
+  margin: 5em auto;
+  background-color: var(--tertiary-color);
+  border-radius: var(--br);
+}
+
+.kata-name {
+  text-align: center;
+  margin-bottom: 0.5em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.kata-url-title {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.url-wrapper {
+  text-align: center;
+  margin: 0;
+}
+
+.url-wrapper a {
+  color: rgba(255, 255, 255, 0.5);
 }

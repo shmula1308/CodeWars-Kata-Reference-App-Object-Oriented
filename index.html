@@ -17,7 +17,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/prism.css" />
     <script src="js/script.js" defer></script>
+    <script src="js/prism.js" type="text/javascript"></script>
+
     <title>CodeWars Kata Reference</title>
   </head>
   <body>
@@ -57,8 +60,7 @@
           <i class="far fa-trash-alt delete"></i>
         </div>
       </div>
-      <main>
-        <div class="background-image"></div>
+      <main style="display: none">
         <h1 class="main-title">My Kata Reference</h1>
         <div class="form-container">
           <form id="kata-form">
@@ -104,24 +106,65 @@
           </form>
         </div>
       </main>
+      <main>
+        <div class="content-wrapper">
+          <h2 class="kata-name">Digitze</h2>
+          <div class="kata-group">
+            <div class="url-wrapper">
+              <h3 class="kata-url-title">
+                URL:
+                <a href="#" class="kata-url"
+                  >https://codepen.io/bradtraversy/pen/OrmKWZ</a
+                >
+              </h3>
+            </div>
+          </div>
+          <div class="solutions-container">
+            <div class="solution">
+              <h3 class="solution-title">Your Solution</h3>
+              <pre>
+            <code class="language-javascript">
+              function nameInStr(str, name){
+                let nameLCase = name.toLowerCase()
+                for(let i = 0; i < nameLCase.length; i++) {
+                  let idx = str.indexOf(nameLCase[i])
+                    if(str.indexOf(nameLCase[i]) === -1) {
+                       return false;
+                    }
+                    str = str.split("").splice(idx+1).join("");
+                    nameInStr(str, name);
+                }
+                
+                return true;
+              
+              }
+             </code>
+          </pre>
+            </div>
+            <div class="solution">
+              <h3 class="solution-title">Alternative Solution</h3>
+              <pre>
+            <code class="language-javascript">
+              function nameInStr(str, name){
+                let nameLCase = name.toLowerCase()
+                for(let i = 0; i < nameLCase.length; i++) {
+                  let idx = str.indexOf(nameLCase[i])
+                    if(str.indexOf(nameLCase[i]) === -1) {
+                       return false;
+                    }
+                    str = str.split("").splice(idx+1).join("");
+                    nameInStr(str, name);
+                }
+                
+                return true;
+              
+              }
+             </code>
+          </pre>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
-    <main style="display: none">
-      <div class="background-image"></div>
-      <h2 class="kata-name">Digitze</h2>
-      <div class="kata-group">
-        <h3 class="kata-url-title">URL</h3>
-        <a href="#" class="kata-url"
-          >https://codepen.io/bradtraversy/pen/OrmKWZ</a
-        >
-      </div>
-      <div class="kata-group">
-        <h3 class="solution-title">Your Solution</h3>
-        <div class="kata-solution"></div>
-      </div>
-      <div class="kata-group">
-        <h3 class="solution-title">Alternative Solution</h3>
-        <div class="kata-solution"></div>
-      </div>
-    </main>
   </body>
 </html>
