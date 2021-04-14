@@ -56,7 +56,11 @@ h4 {
 .katas-side-menu {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  background-color: var(--secondary-color);
+  overflow: auto;
 }
+
 .side-menu-title {
   font-family: "VT323", monospace;
   font-size: 2rem;
@@ -126,12 +130,10 @@ input[type="submit"]:active {
 .app-container {
   display: grid;
   grid-template-columns: 1.5fr 7fr;
-  border: 1px solid gray;
+  height: 100vh;
 }
 
 .katas-side-menu {
-  height: 100vh;
-  background-color: var(--secondary-color);
 }
 
 .form-container {
@@ -192,4 +194,16 @@ form {
 
 .url-wrapper a {
   color: rgba(255, 255, 255, 0.5);
+}
+
+.danger {
+  background-color: brown;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 1em;
+}
+
+.success {
+  background-color: darkgreen;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 1em;
 }

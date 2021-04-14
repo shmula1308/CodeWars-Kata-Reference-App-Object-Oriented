@@ -26,44 +26,17 @@
   <body>
     <div class="app-container">
       <div class="katas-side-menu">
-        <h2 class="side-menu-title">Kata Solutions</h2>
-        <div class="kata">
+        <h2 class="side-menu-title">Kata Collection</h2>
+        <!-- <div class="kata">
           <h3 class="kata-title">Digitize</h3>
           <i class="far fa-trash-alt delete"></i>
-        </div>
-        <div class="kata">
-          <h3 class="kata-title">Digitize</h3>
-          <i class="far fa-trash-alt delete"></i>
-        </div>
-        <div class="kata">
-          <h3 class="kata-title">Digitize</h3>
-          <i class="far fa-trash-alt delete"></i>
-        </div>
-        <div class="kata">
-          <h3 class="kata-title">Digitize</h3>
-          <i class="far fa-trash-alt delete"></i>
-        </div>
-        <div class="kata">
-          <h3 class="kata-title">Digitize</h3>
-          <i class="far fa-trash-alt delete"></i>
-        </div>
-        <div class="kata">
-          <h3 class="kata-title">Digitize</h3>
-          <i class="far fa-trash-alt delete"></i>
-        </div>
-        <div class="kata">
-          <h3 class="kata-title">Digitize</h3>
-          <i class="far fa-trash-alt delete"></i>
-        </div>
-        <div class="kata">
-          <h3 class="kata-title">Digitize</h3>
-          <i class="far fa-trash-alt delete"></i>
-        </div>
+        </div> -->
       </div>
-      <main style="display: none">
+      <main>
         <h1 class="main-title">My Kata Reference</h1>
         <div class="form-container">
           <form id="kata-form">
+            <!-- <div class="success">Kata has been added to your collection</div> -->
             <div class="form-group">
               <label for="kata-name">Kata Name</label>
               <input
@@ -86,7 +59,7 @@
               <label for="kata-url">Your Solution</label>
               <textarea
                 name=""
-                id=""
+                id="kata-solution"
                 cols="30"
                 rows="10"
                 placeholder="Add your solution and comments..."
@@ -96,7 +69,7 @@
               <label for="kata-url">Alternative Solution</label>
               <textarea
                 name=""
-                id=""
+                id="alt-kata-solution"
                 cols="30"
                 rows="10"
                 placeholder="Don't forget to add comments..."
@@ -106,7 +79,7 @@
           </form>
         </div>
       </main>
-      <main>
+      <main style="display: none">
         <div class="content-wrapper">
           <h2 class="kata-name">Digitze</h2>
           <div class="kata-group">
