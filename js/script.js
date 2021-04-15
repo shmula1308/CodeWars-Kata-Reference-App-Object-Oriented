@@ -18,7 +18,6 @@
     class UI {
         static displayKatas() {
             let katas = Store.getKata();
-            console.log(katas)
             katas.forEach(kata => {
                 UI.addToCollection(kata);
             })
@@ -48,15 +47,32 @@
             let text = document.createTextNode(message);
             div.appendChild(text);
             document.querySelector('#kata-form').prepend(div)
+            
 
             setTimeout(()=> {
                 document.querySelector('.alert').remove();
             },2000)
         }
 
-        static showKataDetails() {
+        static showKataDetails(kata) {
             document.querySelector('.store-kata-page').style.display = 'none';
             document.querySelector('.display-kata-page').style.display = 'block';
+
+            document.querySelector('.display-kata-name').textContent = kata[0].title;
+            let link = document.querySelector('.kata-url');
+            link.textContent = kata[0].url;
+            link.href = kata[0].url;
+            document.querySelector('#yourSolution').textContent = kata[0].yourSolution;
+            document.querySelector('#altSolution').textContent = kata[0].altSolution;
+            Prism.highlightAll(); 
+            
+        }
+
+        static removeKataDetails() {
+            document.querySelector('.store-kata-page').style.display = 'block';
+            document.querySelector('.display-kata-page').style.display = 'none';
+            let kataCollection = document.querySelectorAll('.kata');
+            Array.from(kataCollection).forEach(kata => kata.classList.remove('selected-kata'));
         }
 
         static clearFields() {
@@ -64,6 +80,9 @@
         }
 
         static addActiveClass(el) {
+            if(el === null) {
+                return;
+            }
             let kataCollection = document.querySelectorAll('.kata');
             Array.from(kataCollection).forEach(kata => kata.classList.remove('selected-kata'));
             el.classList.add('selected-kata');
@@ -97,6 +116,17 @@
            katas = katas.filter(kata => kata.timestamp != id);
            localStorage.setItem('kata', JSON.stringify(katas));
         }
+
+        static getKataDetails(el) {
+            if(el === null) {
+                return;
+            }
+            let kataId = el.getAttribute('data-timestamp');
+            let katas = Store.getKata()
+            let kata = katas.filter(kata => kata.timestamp == kataId)
+            UI.showKataDetails(kata);
+            console.log(kata)
+        }
     }
 
     
@@ -127,13 +157,14 @@
 
     document.addEventListener('DOMContentLoaded',UI.displayKatas);
 
-    // Event: Delete book
+    // Event: Delete kata
     
     document.querySelector('.katas-side-menu').addEventListener('click',(ev) => {
         if(ev.target.classList.contains('delete')) {
             UI.deleteKata(ev);
             Store.removeKata(ev.target.parentNode);
             UI.showAlert("Kata removed from collection", "success");
+            UI.removeKataDetails();
         } else {
             return;
         }
@@ -143,8 +174,12 @@
     // Event: Show Kata Solutions 
 
     document.querySelector('.katas-side-menu').addEventListener('click',(ev) => {
-            UI.showKataDetails(ev.target.closest('div.kata'));
+            if(!ev.target.matches('div.kata')) return;
+            Store.getKataDetails(ev.target.closest('div.kata'));
             UI.addActiveClass(ev.target.closest('div.kata'));
     })
+    
+    //Event: Remove kata solutions
 
+    document.querySelector('.remove').addEventListener('click', UI.removeKataDetails)
 

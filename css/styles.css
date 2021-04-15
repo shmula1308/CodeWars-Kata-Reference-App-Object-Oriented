@@ -160,7 +160,11 @@ form {
 
 .solution {
   margin: 0 1em 0 1em;
-  flex-basis: 45%;
+}
+
+pre {
+  width: 500px;
+  height: 400px;
 }
 .solutions-container {
   display: flex;
