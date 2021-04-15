@@ -32,7 +32,7 @@
           <i class="far fa-trash-alt delete"></i>
         </div> -->
       </div>
-      <main>
+      <main class="store-kata-page">
         <h1 class="main-title">My Kata Reference</h1>
         <div class="form-container">
           <form id="kata-form">
@@ -79,16 +79,15 @@
           </form>
         </div>
       </main>
-      <main style="display: none">
+      <main class="display-kata-page" style="display: none">
         <div class="content-wrapper">
-          <h2 class="kata-name">Digitze</h2>
+          <i class="far fa-times-circle remove"></i>
+          <h2 class="kata-name"></h2>
           <div class="kata-group">
             <div class="url-wrapper">
               <h3 class="kata-url-title">
                 URL:
-                <a href="#" class="kata-url"
-                  >https://codepen.io/bradtraversy/pen/OrmKWZ</a
-                >
+                <a href="#" class="kata-url"></a>
               </h3>
             </div>
           </div>
@@ -96,42 +95,14 @@
             <div class="solution">
               <h3 class="solution-title">Your Solution</h3>
               <pre>
-            <code class="language-javascript">
-              function nameInStr(str, name){
-                let nameLCase = name.toLowerCase()
-                for(let i = 0; i < nameLCase.length; i++) {
-                  let idx = str.indexOf(nameLCase[i])
-                    if(str.indexOf(nameLCase[i]) === -1) {
-                       return false;
-                    }
-                    str = str.split("").splice(idx+1).join("");
-                    nameInStr(str, name);
-                }
-                
-                return true;
-              
-              }
+            <code class="language-javascript" id="yourSolution">
              </code>
           </pre>
             </div>
             <div class="solution">
               <h3 class="solution-title">Alternative Solution</h3>
               <pre>
-            <code class="language-javascript">
-              function nameInStr(str, name){
-                let nameLCase = name.toLowerCase()
-                for(let i = 0; i < nameLCase.length; i++) {
-                  let idx = str.indexOf(nameLCase[i])
-                    if(str.indexOf(nameLCase[i]) === -1) {
-                       return false;
-                    }
-                    str = str.split("").splice(idx+1).join("");
-                    nameInStr(str, name);
-                }
-                
-                return true;
-              
-              }
+            <code class="language-javascript" id="altSolution">
              </code>
           </pre>
             </div>

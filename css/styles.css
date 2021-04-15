@@ -91,6 +91,10 @@ h4 {
   background-color: rgb(75, 99, 129);
 }
 
+.selected-kata {
+  background-color: rgb(75, 99, 129);
+}
+
 .kata-title {
   font-size: 1rem;
 }
@@ -133,9 +137,6 @@ input[type="submit"]:active {
   height: 100vh;
 }
 
-.katas-side-menu {
-}
-
 .form-container {
   width: 60%;
   margin: 0 auto;
@@ -169,6 +170,7 @@ form {
 }
 
 .content-wrapper {
+  position: relative;
   padding-top: 4em;
   width: 1200px;
   height: 80vh;
@@ -206,4 +208,16 @@ form {
   background-color: darkgreen;
   color: rgba(255, 255, 255, 0.9);
   padding: 1em;
+}
+
+i.remove {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+i.remove:hover {
+  color: cyan;
 }
