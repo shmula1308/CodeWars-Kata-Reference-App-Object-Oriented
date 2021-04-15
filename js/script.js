@@ -174,7 +174,8 @@
     // Event: Show Kata Solutions 
 
     document.querySelector('.katas-side-menu').addEventListener('click',(ev) => {
-            if(!ev.target.matches('div.kata')) return;
+          
+            if(ev.target.classList.contains('delete')) return;
             Store.getKataDetails(ev.target.closest('div.kata'));
             UI.addActiveClass(ev.target.closest('div.kata'));
     })
